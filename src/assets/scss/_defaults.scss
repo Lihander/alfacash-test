@@ -1,0 +1,35 @@
+@import "./variables";
+
+html,
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  font-family: $font_family_default;
+  margin: 0;
+  padding: 0;
+  color: $c-dark;
+}
+
+.container {
+  max-width: 1024px;
+  padding: 40px 20px;
+  margin: auto;
+}
+
+a {
+  color: $c-blue;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: $c-blue-15;
+  }
+}

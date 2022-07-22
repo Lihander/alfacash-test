@@ -1,0 +1,60 @@
+$svg-icons: 'double-arrow', 'play', 'pause', 'volume', 'melody';
+
+@mixin svg-bg-mask($filename, $color) {
+  mask: url('~@/assets/svgs/#{$filename}.svg') 50% 50% no-repeat;
+  mask-size: contain;
+  background-color: $color;
+}
+
+@mixin svg-bg-colored($filename) {
+  background: url('~@/assets/svgs/#{$filename}.svg') 50% 50% no-repeat;
+  background-size: contain;
+}
+
+.svg-icon {
+  fill: currentColor;
+}
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.icon-32 {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-20 {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-18 {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-12 {
+  width: 12px;
+  height: 12px;
+}
+
+@each $icon in $svg-icons {
+  .icon-#{$icon} {
+    @extend .icon;
+    @include svg-bg-mask($icon, currentColor);
+  }
+
+  .icon-#{$icon}_colored {
+    @extend .icon;
+    @include svg-bg-colored($icon);
+  }
+}
